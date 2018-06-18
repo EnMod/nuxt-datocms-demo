@@ -1,0 +1,48 @@
+.flickity-viewport
+  // !important to overwrite the defaults
+  margin-bottom: 2em !important
+  height: 250px !important
+  .row
+    width: 100%
+  .ev1-banner
+    background: url('https://placekitten.com/g/800/200') no-repeat center
+    background-size: cover
+  .ev2-banner
+    background: url('https://placekitten.com/g/800/200') no-repeat center
+    background-size: cover
+  .ev3-banner
+    background: url('https://placekitten.com/g/800/200') no-repeat center
+    background-size: cover
+  .carousel-cell
+    width: 1000px
+    height: 250px
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    a:link,
+    a:active,
+    a:visited,
+    a:hover
+      color: white
+      text-shadow: var(--textShadow)
+      text-align: center
+    a
+      cursor: pointer
+      &:link,
+      &:active
+        text-decoration: underline
+      &:hover
+        color: var(--green)
+    h1, h4
+      flex: 2
+    h3
+      flex: 1

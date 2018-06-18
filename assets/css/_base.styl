@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans)
+
+// ~~~~~~~~~~~~~
+// ~ Variables ~
+// ~~~~~~~~~~~~~
+:root
+  // ---
+  // global
+  --linkStyle: underline
+  --bodyFont: 'Noto Sans'
+  --tileHeight: 5.6rem
+  --tableColor: black
+  // ---
+  // image hover
+  --imgTrans: all 0.1s ease-in-out
+  --hovScalar: 1.1
+  // --imgHov:
+  //   transition: var(--imgTrans)
+  //   &:hover
+  //     transform: scale(var(--hovScalar))
+  // ---
+  // font stack
+  --main: var(--bodyFont),"Helvetica Neue", HelveticaNeue, Helvetica, sans-serif
+  --helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif
+  --georgia: Georgia, Cambria, "Times New Roman", Times, serif
+  --lucidaGrande: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif
+  --monospace: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace
+  --verdana: Verdana, Geneva, sans-serif
+  // ---
+  // font vars
+  --textShadow: 2px 2px 2px rgba(0,0,0,1)
+  --fontStack: var(--main)
+  --fontSize: 18px
+  // ---
+  // Colors
+  --green: #046330
+  --greenTrans: rgba(4, 99, 48, 0.5)
+  --gold: #f0b510
+  // ---
+  // breakpoints
+  --break1: 400px
+  --break2: 768px
+  --break3: 1140px
+  --break4: 1366px
+  // ---
+  // rulesets
+  /*  --centerBelow:
+    display: flex
+    align-items: center
+    justify-content: center*/
+  --break5: 1440px
+
+// ~~~~~~~~~
+// ~ Rules ~
+// ~~~~~~~~~
+
+*, *:before, *:after
+  box-sizing: inherit
+
+html
+  box-sizing: border-box
+  overflow-y: scroll
+  // background: url('~assets/images/bg.jpg') fixed
+
+body, button, input, select, textarea
+  font-size: var(--fontSize)
+  @media (max-width: 1000px)
+    font-size: 15px
+  font-family: var(--fontStack)
+  color: #000
+
+body
+  margin: 0
+
+a
+  cursor: pointer
+  color: #000
+  text-decoration: underline
+  // &:link,
+  // &:active
+  //   text-decoration: underline
+  &:visited
+    color: #000
+  &:hover
+    color: var(--green)
+
+header img
+  margin: 1.5em
+  @media (max-width: 1000px)
+    margin: 0
+
+.g-emph
+  color: #df0000
+  font-weight: bold
+
+hr
+  height: 2px
+  border: 1px #000 solid
+  background-color: #000
+  margin: 2em auto
+
+section
+  margin-top: 6em
+  & > .g-txt-cen
+    font-size: 150%
+
+img
+  width: 100%
+  @media (max-width: 1000px)
+    width: 50%

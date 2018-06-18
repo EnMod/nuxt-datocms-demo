@@ -1,0 +1,115 @@
+.nav
+  .hide-touch.is-active
+    display: block
+  a
+    color: #fff
+    transition: var(--imgTrans)
+    text-decoration: none
+    &:link,
+    &:visited
+      color: #fff
+      text-decoration: none
+    &:hover
+      background-color: var(--gold)
+      color: var(--green)
+    &.nav-item.is-active,
+    &.nav-link.is-active
+      background-color: var(--gold)
+      color: var(--green)
+  .nav-burger
+    transition: var(--imgTrans)
+    span
+      background-color: #fff
+    &:hover
+      background-color: var(--gold)
+      span
+        background-color: var(--green)
+    &.is-active
+      background: var(--gold)
+      span
+        background-color: var(--green)
+  &.page-nav
+    background: var(--green)
+    @media (max-width: 1000px)
+      color: #fff
+    .nav-menu
+      font-size: 90%
+      @media (min-width: 1000px)
+        display: flex
+        justify-content: center
+  &.global-nav
+    position: fixed
+    top: 0
+    left: 0
+    background: var(--green)
+    @media (min-width: 1000px)
+      background: transparent
+    width: 100%
+    z-index: 1
+    transition: var(--imgTrans)
+    a:hover
+      color: var(--green)
+    .nav-brand .nav-item
+      font-weight: bold
+      @media (min-width: 1000px)
+        color: #000
+      &:hover
+        color: var(--green)
+    .nav-dropdown
+      padding: 0
+      background-color: var(--green)
+    // ---
+    // little arrow markers on the right of the dropdown links
+    .nav-link
+      @media (min-width: 1000px)
+        color: #000
+      &::after
+        border: 2px solid #fff
+        border-top-color: #fff
+        border-right-color: #fff
+        @media (min-width: 1000px)
+          border-color: #000
+        border-top-width: 1px
+        border-right-width: 1px
+        border-top-style: solid
+        border-right-style: solid
+        border-right: 0
+        border-top: 0
+        content: " "
+        display: block
+        height: 0.5em
+        pointer-events: none
+        position: absolute
+        -webkit-transform: rotate(-45deg)
+        transform: rotate(-45deg)
+        width: 0.5em
+        margin-top: -0.375em
+        right: 1.125em
+        top: 50%
+      &:hover
+        color: var(--green)
+      &:hover:after
+        border-color: var(--green)
+      &.is-active::after
+        transform: rotate(135deg)
+        top: 60%
+        border-color: var(--green)
+    &.off-top
+      background: var(--green)
+      a,
+      .nav-brand .nav-item
+        color: #fff
+      a:hover
+        color: var(--green)
+      .nav-link
+        color: #fff
+        &:hover
+          color: var(--green)
+          background-color: var(--gold)
+        &::after
+          border-color: #fff
+        &:hover:after,
+        &.is-active::after
+          border-color: var(--green)
+        &.is-active
+          color: var(--green)

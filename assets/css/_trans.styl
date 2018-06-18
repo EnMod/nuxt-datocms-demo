@@ -1,0 +1,84 @@
+// general pages
+
+.pageleft-enter-active
+  animation: pageleft-slide-in 0.15s cubic-bezier(0.00, 1.00, 0.50, 1.00) forwards
+
+.pageleft-leave-active
+  animation: pageleft-slide-out 0.15s cubic-bezier(0.00, 1.00, 0.50, 1.00) forwards
+
+.pageleft-move
+  transition: transform 0.15s
+
+@keyframes pageleft-slide-in
+  from
+    transform: translateX(-20px)
+    opacity: 0
+  to
+    transform: translateX(0)
+    opacity: 1
+
+@keyframes pageleft-slide-out
+  from
+    transform: translateX(0)
+    opacity: 1
+  to
+    transform: translateX(20px)
+    opacity: 0
+
+// general pages
+
+.page-enter-active
+  animation: page-slide-in 0.15s cubic-bezier(0.215, 0.61, 0.355, 1) forwards
+
+.page-leave-active
+  animation: page-slide-out 0.15s cubic-bezier(0.215, 0.61, 0.355, 1) forwards
+
+.page-move
+  transition: transform 0.15s
+
+@keyframes page-slide-in
+  from
+    transform: translateX(-20px)
+    opacity: 0
+  to
+    transform: translateX(0)
+    opacity: 1
+
+@keyframes page-slide-out
+  from
+    transform: translateX(0)
+    opacity: 1
+  to
+    transform: translateX(20px)
+    opacity: 0
+
+// main pages
+
+// general pages
+
+.main-enter-active
+  animation: main-slide-in 0.15s ease-out forwards
+
+.main-leave-active
+  animation: main-slide-out 0.15s ease-out forwards
+
+.main-move
+  transition: transform 0.15s
+
+@keyframes main-slide-in
+  from
+    opacity: 0
+    transform: scale(0.9)
+  to
+    opacity: 1
+    transform: scale(1)
+
+
+@keyframes main-slide-out
+  from
+    opacity: 1
+    transform: scale(1)
+  to
+    opacity: 0
+    transform: scale(0.9)
+
