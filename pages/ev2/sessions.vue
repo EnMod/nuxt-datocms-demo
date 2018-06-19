@@ -36,8 +36,14 @@
           .col
             .row
               .col(v-for='session in timeSlot.sessions' :class='session.track.stub')
-                a(@click='openVex(session.relevantId)') {{ session.title }} {{session.relevantId}}
+                a(@click='openVex(session.relevantId)') {{ session.title }}
                 p {{ session.presenters }}
+
+        template(v-if='timeSlot.slottype.slottype == "Posters"')
+          .col.s2.time
+            p {{ timeSlot.slottime }}
+          .col
+            p(v-html='$md.render(timeSlot.description)')
 
       .row
         .col.s2.time

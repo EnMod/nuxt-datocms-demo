@@ -1,15 +1,16 @@
 <template lang="pug">
-  .info.blurb.p-page-item
-    .row
-      .col.p33
-        img(src='https://placekitten.com/300/150')
-      .col
-        h2 {{ ev1.title }}
-        h3 {{ ev1.date }}
-        h3 {{ ev1.time }}
-        h3 {{ ev1.place }}
+  .info.p-page-item
+    .blurb
+      .row
+        .col.p33
+          img(src='https://placekitten.com/300/150')
+        .col
+          h2 {{ ev1.title }}
+          h3 {{ ev1.date }}
+          h3 {{ ev1.time }}
+          h3 {{ ev1.place }}
     .moreinfo
-      p(v-html='$md.render(ev1.title)')
+      p(v-html='$md.render(ev1.description)')
       hr
       .row
         .col.s2
@@ -37,6 +38,6 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.info.blurb .row
+.blurb .row
   text-align: center
 </style>

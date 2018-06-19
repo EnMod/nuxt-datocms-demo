@@ -32,8 +32,7 @@ export default {
       pages: {
         "Child 1": "child1",
         "Child 2": "child2",
-        "Child 3": "child3",
-        "Child 4": "child4"
+        "Child 3": "child3"
       }
     }
   }

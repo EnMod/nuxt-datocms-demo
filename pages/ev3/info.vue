@@ -1,23 +1,22 @@
 <template lang="pug">
-  .info.blurb.p-page-item
-    .row
-      .col.p33
-        img(src='https://placekitten.com/300/150')
-      .col
-        h2 {{ ev1.title }}
-        h3 {{ ev1.date }}
-        h3 {{ ev1.time }}
-        h3 {{ ev1.place }}
+  .info.p-page-item
+    .primaryinfo
+      img(src='https://placekitten.com/300/150')
+      h2 {{ ev3.title }}
+      h3 {{ ev3.date }}
+      h3 {{ ev3.time }}
+      h3 {{ ev3.place }}
     .moreinfo
-      p(v-html='$md.render(ev1.title)')
+      p(v-html='$md.render(ev3.description)')
       hr
-      .row
-        .col.s2
-          img(src='https://placekitten.com/150/200')
-        .col
-          h3 Keynote Address by {{ keynote.speaker.name }}
-          p(v-html='$md.render(keynote.description)')
-          a(@click='openVex("ev1Speaker")') For more information about {{ keynote.speaker.name }}, click here.
+      template(v-for='keynote in keynotes')
+        .row(v-if='keynote.hostEvent.abbreviation == "ev3"')
+          .col.s2
+            img(src='https://placekitten.com/150/200')
+          .col
+            h3 Keynote Address: {{ keynote.title }} by {{ keynote.speaker.name }}
+            p(v-html='$md.render(keynote.description)')
+            a(@click='openVex(`${keynote.speaker.stub}`)') For more information about {{ keynote.speaker.name }}, click here.
 
 </template>
 <script>
@@ -25,11 +24,11 @@ import openVex from "~/mixins/openVexMethod"
 
 export default {
   computed: {
-    ev1() {
-      return this.$store.state.allData.allEventModels[0]
+    ev3() {
+      return this.$store.state.allData.allEventModels[2]
     },
-    keynote() {
-      return this.$store.state.allData.allKeynotes[0]
+    keynotes() {
+      return this.$store.state.allData.allKeynotes
     }
   },
   mixins: [openVex],
@@ -37,6 +36,6 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.info.blurb .row
+.primaryinfo
   text-align: center
 </style>

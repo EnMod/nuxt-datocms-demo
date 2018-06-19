@@ -39,19 +39,21 @@ export default {
             }
             return true
           } else {
-              // ...loop over each of the sessions
-              slot.sessions.some(session => {
+              // ...loop over each of the sessions if there are any
+              if(slot.sessions) {
+                slot.sessions.some(session => {
                 // if a session's rel is the same as the one of the clicked link,
-                if (session.relevantId == subject) {
+                  if (session.relevantId == subject) {
 
-                  // set the info to fill
-                  // then end the some()
-                  infoToFill.type = "session"
-                  infoToFill.id = subject
-                  infoToFill.info = session
-                  return true
-                }
-              })
+                    // set the info to fill
+                    // then end the some()
+                    infoToFill.type = "session"
+                    infoToFill.id = subject
+                    infoToFill.info = session
+                    return true
+                  }
+                })
+              }
           }
         }
       })
@@ -63,11 +65,19 @@ export default {
       } else if (subject == "ev3Speaker1") {
         infoToFill.type = "speaker"
         infoToFill.id = subject
-        infoToFill.info = allData.allKeynotes[0].speaker
+        infoToFill.info = allData.allKeynotes[1].speaker
       } else if (subject == "ev3Speaker2") {
         infoToFill.type = "speaker"
         infoToFill.id = subject
         infoToFill.info = allData.allKeynotes[2].speaker
+      } else if (subject == "ev3Keynote1") {
+        infoToFill.type = "keynote"
+        infoToFill.id = subject
+        infoToFill.info = allData.allKeynotes[1]
+      } else if (subject == "ev3Keynote2") {
+        infoToFill.type = "keynote"
+        infoToFill.id = subject
+        infoToFill.info = allData.allKeynotes[2]
       } else if (subject == "ev1Keynote") {
         infoToFill.type = "keynote"
         infoToFill.id = subject
