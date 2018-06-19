@@ -1,7 +1,7 @@
 <template lang="pug">
   nav.nav.global-nav(:class='{ "off-top": isOffTop }')
     .nav-brand
-      nuxt-link.nav-item(to='/') Nuxt/DatoCMS Demo Site
+      nuxt-link.nav-item(to='/') Nuxt/DatoCMS Static SPA Demo
       #global-menu-icon.nav-burger.burger(@click='openMenu("global")').hide-desk
         span
         span

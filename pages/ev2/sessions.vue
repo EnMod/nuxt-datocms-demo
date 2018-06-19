@@ -42,14 +42,9 @@
         template(v-if='timeSlot.slottype.slottype == "Posters"')
           .col.s2.time
             p {{ timeSlot.slottime }}
-          .col
+          .col.events
+            p: a(@click='openVex("ev2-poster")') Event 2 Poster
             p(v-html='$md.render(timeSlot.description)')
-
-      .row
-        .col.s2.time
-          p 3:30 - 4:45
-        .col.events
-          a(@click='openVex("ev2-poster")') Beverage/Networking Reception (Click to see poster sessions)
 
     template(v-else)
       h2 Sessions for 2018 coming soon!

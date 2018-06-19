@@ -22,7 +22,7 @@
             p {{ timeSlot.slottime }}
           .col.events
             p(v-for='keynote in keynotes' v-if='keynote.hostEvent.abbreviation == "ev1"')
-              a(@click='openVex(keynote.conference.abbreviation + "Keynote")') Keynote by {{ keynote.speaker.name }}
+              a(@click='openVex(keynote.hostEvent.abbreviation + "Keynote")') Keynote by {{ keynote.speaker.name }}
               br
               br
               |{{ keynote.title }}

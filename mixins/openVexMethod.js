@@ -61,7 +61,11 @@ export default {
       if (["poster", "ev2-poster"].indexOf(subject) >= 0) {
         infoToFill.type = "poster"
         infoToFill.id = subject
-        infoToFill.info = confData[7].sessions
+        infoToFill.info = evData[5].sessions
+      } else if (subject == "ev1Speaker") {
+        infoToFill.type = "speaker"
+        infoToFill.id = subject
+        infoToFill.info = allData.allKeynotes[0].speaker
       } else if (subject == "ev3Speaker1") {
         infoToFill.type = "speaker"
         infoToFill.id = subject
@@ -81,7 +85,7 @@ export default {
       } else if (subject == "ev1Keynote") {
         infoToFill.type = "keynote"
         infoToFill.id = subject
-        infoToFill.info = allData.allKeynotes[1]
+        infoToFill.info = allData.allKeynotes[0]
       } else if (subject == "ev2Keynote") {
         infoToFill.type = "keynote"
         infoToFill.id = subject

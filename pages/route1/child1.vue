@@ -9,8 +9,8 @@
 
       .col: .accordion
         .acc-item(v-for="(sectionStr, sectionNum) in sectionInfo")
-          input(:id='`tab-{{sectionStr}}`' type='checkbox' name='tabs')
-          label(:for='`tab-{{sectionStr}}`') Link Category {{sectionNum}}
+          input(:id='`tab-${sectionStr}`' type='checkbox' name='tabs')
+          label(:for='`tab-${sectionStr}`') Link Category {{sectionNum}}
           .acc-text
             p(v-for="linkNum in 4"): a(target='_blank' rel='noreferrer noopener' href="/") Link {{linkNum}}
 

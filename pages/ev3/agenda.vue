@@ -27,7 +27,7 @@
         template(v-if='timeSlot.slottype.slottype == "Sessions"')
           .col.s2.time
             p {{ timeSlot.slottime }}
-          .col
+          .col.events
             p(v-html='$md.render(timeSlot.description)')
 
     template(v-else)
